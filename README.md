@@ -196,8 +196,10 @@
     * Conectar el contenedor a la red
     ```
     docker network connect mired mysql-server
+    ```
 
     Nota: otra alternativa es volver a crear el contenedor conectandolo a la red en docker run
+    
     ```
     docker run --network mired --name mysql-server -e MYSQL_ROOT_PASSWORD=1234 -d mysql
     ```
