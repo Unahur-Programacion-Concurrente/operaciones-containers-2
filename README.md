@@ -289,7 +289,7 @@ docker start mysql-server
 #### Verificación de datos (aplica para todos los ejercicios que siguen)
 Iniciar sesión mysql de línea de comandos
 ```
-docker run -it --rm mysql mysql -h<hostIP>) -uroot -p -P3306
+docker run -it --rm mysql mysql -h<hostIP> -uroot -p -P3306
 ```
 Verificar los datos cargados en el punto anterior
 ```
