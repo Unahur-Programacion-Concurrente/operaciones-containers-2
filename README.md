@@ -1,63 +1,78 @@
 # operaciones-containers-2
 
-## Imágenes y Contenedores
-
-1. Creación de Contenedor hello-world (Hola Mundo)  
-   1. En un explorador abrir docker hub [https://hub.docker.com/](https://hub.docker.com/)  
-   2. En search buscar Hello World (seleccionar hello-world)  
-   3. Bajar la imagen a su máquina local:  
-      docker pull hello-world  
-   4. Verificar que la imagen fue descargada (pull)  
-      docker images  
-   5. Arrancar un contenedor con esta imagen (observar los mensajes de error)  
-      docker run hello-world  
-   6. Ver los contenedores que se crearon y su estado  
-      docker ps \-a  
+## Imágenes y Contenedores (Repaso) 
         
-2. Creación de un contenedor Ubuntu (sistema operativo base en contenedor)  
-   1. Buscar la Imagen  
+1. Creación de un contenedor Ubuntu (sistema operativo base en contenedor) 
+
+   1.1. Buscar la Imagen  
       La imagen se puede buscar en  [https://hub.docker.com](https://hub.docker.com/search?q=ubuntu&type=image)  
       o directamente por comando:  
-      docker search ubuntu  
-   2. Descargar la imagen (opcional)  
-      docker pull ubuntu  
+      ```
+      docker search ubuntu
+      ```
+
+   1.2. Descargar la imagen (opcional)  
+      ```
+      docker pull ubuntu
+      ```
       Si no se especifica la versión, descarga la última:  
-      ubuntu:latest  
-   3. Para ver las imagenes descargadas en nuestra máquina local  
-      docker images  
-   4. Crear contenedor ubuntu  
-      sudo docker run \-it ubuntu  
-      A terminar queda en el shell del contenedor
+      ```ubuntu:latest```
 
-   root@e2138ee6f5f9:/\# 
+   1.3. Para ver las imagenes descargadas en nuestra máquina local  
+     ```
+     docker images 
+     ```
 
-      Para salir del contenedor (deteniendolo)
+   1.4. Crear contenedor ubuntu 
+    ``` 
+    sudo docker run -it ubuntu  
+    ```  
+    Al terminar queda en el shell del contenedor
+    
+    ```
+    root@e2138ee6f5f9:/\# 
+    ```
+    
+    1.5 Salir del contenedor (deteniendolo)
+    ```
+    exit
+    ```
+    1.6 Verificar que el contenedor está detenido
+    ```
+    docker ps -a
+    ```
+    (Anotar el id del contenedor)
+ 
+    1.7. Volver a arrancar el contenedor detenido
+    ```
+    docker start \<id\>  # o primeras letras del id
+    ```
+    1.8. Salir del shell del contenedor sin detenerlo
 
-   exit
+    ``` Ctrl+P+Q ```
 
-   5. Para arrancar un contenedor parado  
-      docker start \<id\>  \# o primera letra del id  
-   6. Para salir del contenedor sin detenerlo
+    1.9. Para conectarse al shell de un contenedor en ejecución 
+    ``` 
+    docker attach \<id\>  \# o primera letra del id  
+    ```
 
-   Ctrl+P+Q
-
-   7. Para ingresar a un contenedor en ejecución  
-      docker attach \<id\>  \# o primera letra del id  
-        
-3. Instalación de mysql en el contenedor  
-   1. Ingresar al contenedor Ubuntu  
-      sudo docker ps \- a  
-      sudo docker start \<id\>  
-      sudo docker attach \<id\>
-
-   2. Instalación de mysql  
-      apt update  
-      apt install mysql-server  
-        
-   3. Arrancar mysql  
+2. Instalar mysql server en el contenedor ubuntu  
+   2.1. Ingresar al contenedor Ubuntu
+    ```
+    sudo docker ps - a  # anotar el id del contenedor  
+    sudo docker start <id\>  
+    sudo docker attach \<id\>
+    ```
+   2.2. Instalación de mysql 
+    ``` 
+    apt update  
+    apt install mysql-server  
+    ```
+   2.3. Arrancar mysql  
       service mysql start  
       service mysql status  
-        
+
+ 
 4. Eliminar contenedores e imágenes  
    1. Listar los contenedores en ejecución  
       docker ps  
