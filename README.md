@@ -334,7 +334,7 @@ docker run --name mysql-server -e MYSQL_ROOT_PASSWORD='1234' -e MYSQL_DATABASE=m
     CREATE USER 'usuario1'@'localhost' IDENTIFIED BY '1234';  
     GRANT ALL PRIVILEGES ON mibase.* TO 'usuario1'@'localhost';  
     FLUSH PRIVILEGES;  
-    create table tabla1 (id INT AUTO\_INCREMENT PRIMARY KEY, nombre VARCHAR(255));  
+    create table tabla1 (id INT AUTO_INCREMENT PRIMARY KEY, nombre VARCHAR(255));  
     insert into tabla1 (nombre) values ('daniel'), ('karina');  
     select * from tabla1;  
     quit;
@@ -345,7 +345,7 @@ docker run --name mysql-server -e MYSQL_ROOT_PASSWORD='1234' -e MYSQL_DATABASE=m
 docker stop mysql-server
 docker rm mysql-server
 
-docker run \--name mysql-server \-e MYSQL\_ROOT\_PASSWORD='1234' \-e MYSQL\_DATABASE=mibase \-v voldatos:/var/lib/mysql \-d \-p 3306:3306 mysql
+docker run --name mysql-server -e MYSQL_ROOT_PASSWORD='1234' -e MYSQL_DATABASE=mibase -v voldatos:/var/lib/mysql -d -p 3306:3306 mysql
 ```
 **Que ocurrió con los datos?**
 
