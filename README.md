@@ -458,7 +458,7 @@ Especifica la imagen base desde la que se construye la nueva imagen.
 ```FROM <imagen>```
 
 ##### Comentarios
-Docker trata a las líneas que comienzan con \# como comentarios.  
+Docker trata a las líneas que comienzan con # como comentarios.  
 ```# Commentario```
 
 ##### RUN
@@ -500,10 +500,10 @@ Agregar:
 ```
 FROM mysql:latest  
     
-ENV MYSQL\_ROOT\_PASSWORD=1234  
-ENV MYSQL\_DATABASE=mibase  
-ENV MYSQL\_USER=usuario  
-ENV MYSQL\_PASSWORD=1234  
+ENV MYSQL_ROOT_PASSWORD=1234  
+ENV MYSQL_DATABASE=mibase  
+ENV MYSQL_USER=usuario  
+ENV MYSQL_PASSWORD=1234  
     
 COPY mibasedump.sql /docker-entrypoint-initdb.d/  
 EXPOSE 3306
@@ -652,9 +652,9 @@ Los contenedores se comunicarán por el siguiente network:
 
    Agregar las siguientes líneas:  
    ```
-   MYSQL\_ROOT\_PASSWORD=password  
-   MYSQL\_USER=wpuser  
-   MYSQL\_PASSWORD=password
+   MYSQL_ROOT_PASSWORD=password  
+   MYSQL_USER=wpuser  
+   MYSQL_PASSWORD=password
    ```
 3. Crear la red (docker network) app-network
 
@@ -774,11 +774,11 @@ Después, con un solo comando, se crean y se inician todos los servicios de la c
 
 ## Instalación
 
-sudo curl \-L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname \-s)-$(uname \-m)" \-o /usr/local/bin/docker-compose
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 
-sudo chmod \+x /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
 
-docker-compose \--version
+docker-compose --version
 
 ## docker-compose.yaml
 ```
